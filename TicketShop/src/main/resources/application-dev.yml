@@ -1,0 +1,12 @@
+server:
+  port: 6001
+
+spring:
+  jackson.default-property-inclusion: NON_NULL
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/TicketShop
+    username: postgres
+    password: postgre
