@@ -2,19 +2,12 @@ package com.example.ticketShop.controller;
 
 import com.example.ticketShop.constants.ApiConstants;
 import com.example.ticketShop.constants.ErrorCodes;
-import com.example.ticketShop.dto.event.CreateEventDto;
-import com.example.ticketShop.dto.event.EventResponseDto;
-import com.example.ticketShop.dto.event.UpdateEventDto;
 import com.example.ticketShop.dto.ticketType.BuyTicketDto;
 import com.example.ticketShop.dto.user.RegisterUserDto;
 import com.example.ticketShop.dto.user.UpdateUserDto;
 import com.example.ticketShop.dto.user.UserResponseDto;
-import com.example.ticketShop.entity.Event;
 import com.example.ticketShop.entity.User;
-import com.example.ticketShop.mapper.EventMapper;
 import com.example.ticketShop.mapper.UserMapper;
-import com.example.ticketShop.service.EventService;
-import com.example.ticketShop.service.InvoiceService;
 import com.example.ticketShop.service.UserService;
 import com.example.ticketShop.util.ResponseEntityUtil;
 import java.util.List;
@@ -86,4 +79,6 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
     // endregion
+
+
 }

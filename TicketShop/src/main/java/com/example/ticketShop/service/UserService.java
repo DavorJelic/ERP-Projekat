@@ -2,22 +2,20 @@ package com.example.ticketShop.service;
 
 import com.example.ticketShop.constants.ErrorCodes;
 import com.example.ticketShop.dto.address.CreateAddressDto;
-import com.example.ticketShop.dto.event.UpdateEventDto;
 import com.example.ticketShop.dto.ticketType.BuyTicketDto;
 import com.example.ticketShop.dto.user.RegisterUserDto;
 import com.example.ticketShop.dto.user.UpdateUserDto;
-import com.example.ticketShop.entity.Event;
 import com.example.ticketShop.entity.Invoice;
 import com.example.ticketShop.entity.User;
-import com.example.ticketShop.exception.ConflictException;
-import com.example.ticketShop.exception.NotFoundException;
 import com.example.ticketShop.mapper.UserMapper;
 import com.example.ticketShop.repository.UserRepository;
-import java.time.OffsetDateTime;
+import com.example.ticketShop.exception.ConflictException;
+import com.example.ticketShop.exception.NotFoundException;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
@@ -33,11 +31,12 @@ public class UserService {
     private final AddressService addressService;
     private final TicketService ticketService;
     private final InvoiceService invoiceService;
+    private final PasswordEncoder passwordEncoder;
 
     @Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
-    public User findByName(String organizer, String errorCode) {
-        return userRepository.findByName(organizer).orElseThrow(() -> {
-            log.info("User with name '{}' does not exist.", organizer);
+    public User findByName(String username, String errorCode) {
+        return userRepository.findByName(username).orElseThrow(() -> {
+            log.info("User with name '{}' does not exist.", username);
             throw new NotFoundException(errorCode);
         });
     }
@@ -56,6 +55,7 @@ public class UserService {
         }
 
         User user = userMapper.mapToEntity(registerUser);
+        user.setPassword(passwordEncoder.encode(registerUser.getPassword()));
         user.setAddress(addressService.create(new CreateAddressDto(registerUser.getStreet(), registerUser.getCity(), registerUser.getNumber(), registerUser.getPostalCode(), registerUser.getCountry())));
 
         user = userRepository.save(user);

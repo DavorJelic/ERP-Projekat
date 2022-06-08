@@ -3,7 +3,6 @@ package com.example.ticketShop.dto.user;
 import com.example.ticketShop.dto.base.CreatedDtoBase;
 import com.example.ticketShop.entity.Address;
 import com.example.ticketShop.enums.UserType;
-import javax.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

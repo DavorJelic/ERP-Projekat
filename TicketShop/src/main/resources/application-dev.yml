@@ -1,5 +1,5 @@
 server:
-  port: 6001
+  port: 5000
 
 spring:
   jackson.default-property-inclusion: NON_NULL

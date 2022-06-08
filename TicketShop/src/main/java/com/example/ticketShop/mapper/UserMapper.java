@@ -1,12 +1,8 @@
 package com.example.ticketShop.mapper;
 
-import com.example.ticketShop.dto.event.CreateEventDto;
-import com.example.ticketShop.dto.event.EventResponseDto;
-import com.example.ticketShop.dto.event.UpdateEventDto;
 import com.example.ticketShop.dto.user.RegisterUserDto;
 import com.example.ticketShop.dto.user.UpdateUserDto;
 import com.example.ticketShop.dto.user.UserResponseDto;
-import com.example.ticketShop.entity.Event;
 import com.example.ticketShop.entity.User;
 import java.util.List;
 import org.mapstruct.BeanMapping;

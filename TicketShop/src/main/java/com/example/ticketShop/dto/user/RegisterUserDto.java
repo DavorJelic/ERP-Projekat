@@ -5,7 +5,6 @@ import javax.validation.constraints.NotEmpty;
 import com.example.ticketShop.constants.RegexPatterns;
 import javax.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

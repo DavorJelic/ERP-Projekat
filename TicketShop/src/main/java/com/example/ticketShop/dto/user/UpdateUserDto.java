@@ -1,8 +1,6 @@
 package com.example.ticketShop.dto.user;
 
 import com.example.ticketShop.constants.RegexPatterns;
-import com.example.ticketShop.enums.UserType;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
 public class UpdateUserDto {

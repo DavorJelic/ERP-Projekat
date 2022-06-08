@@ -1,9 +1,9 @@
 package com.example.ticketShop.mapper;
 
 import com.example.ticketShop.dto.event.CreateEventDto;
-import com.example.ticketShop.dto.event.EventResponseDto;
 import com.example.ticketShop.dto.event.UpdateEventDto;
 import com.example.ticketShop.entity.Event;
+import com.example.ticketShop.dto.event.EventResponseDto;
 import java.util.List;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.IterableMapping;

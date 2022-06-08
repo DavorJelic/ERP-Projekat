@@ -1,8 +1,6 @@
 package com.example.ticketShop.mapper;
 
-import com.example.ticketShop.dto.event.EventResponseDto;
 import com.example.ticketShop.dto.ticketType.CreateTicketTypeDto;
-import com.example.ticketShop.entity.Event;
 import com.example.ticketShop.entity.TicketType;
 import java.util.List;
 import org.mapstruct.BeanMapping;

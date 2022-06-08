@@ -36,6 +36,9 @@ public class User extends CreatedBase{
     @Column
     private String email;
 
+    @Column
+    private String password;
+
     @ManyToOne
     @JoinColumn(name = "fk_user_address")
     private Address address;

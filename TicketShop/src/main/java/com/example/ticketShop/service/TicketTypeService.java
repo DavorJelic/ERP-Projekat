@@ -1,10 +1,8 @@
 package com.example.ticketShop.service;
 
-import com.example.ticketShop.constants.ErrorCodes;
 import com.example.ticketShop.dto.ticketType.CreateTicketTypeDto;
 import com.example.ticketShop.entity.Event;
 import com.example.ticketShop.entity.TicketType;
-import com.example.ticketShop.exception.ConflictException;
 import com.example.ticketShop.exception.NotFoundException;
 import com.example.ticketShop.mapper.TicketTypeMapper;
 import com.example.ticketShop.repository.TicketTypeRepository;

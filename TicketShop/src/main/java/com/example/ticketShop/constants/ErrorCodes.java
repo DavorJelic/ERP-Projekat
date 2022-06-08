@@ -37,6 +37,12 @@ public final class ErrorCodes {
     // invoice
     public static final String INVOICE_NOT_FOUND = "I001";
 
+    // login
+    public static final String LOGIN_ERROR = "L001";
+
+    // token
+    public static final String TOKEN_EXPIRED = "TO001";
+
     private ErrorCodes() {
         super();
     }
